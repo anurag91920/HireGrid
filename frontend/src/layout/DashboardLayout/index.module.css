@@ -1,0 +1,152 @@
+.homeContainer {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f5f5;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Left Sidebar */
+.homeContainer_leftBar {
+  flex: 0.2;
+  background: white;
+  border-right: 1px solid #ddd;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: flex-start;
+}
+
+/* Feed (Middle Section) */
+.homeContainer_feedContainer {
+  flex: 0.6;
+  background: #fff;
+  padding: 1.5rem;
+}
+
+/* Right Sidebar */
+.homeContainer_extraContainer {
+  flex: 0.2;
+  background: white;
+  padding: 1.5rem 1rem;
+  border-left: 1px solid #ddd;
+}
+
+/* Sidebar Items */
+.sideBArOptions {
+  display: flex;
+  align-items: center;
+  font-size: 1.05rem;
+  font-weight: 500;
+  gap: 0.8rem;
+  padding: 0.75rem 1rem;
+  width: 90%;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  color: #333;
+  cursor: pointer;
+}
+
+.sideBArOptions:hover {
+  background-color: #e5f1fb;
+  transform: scale(1.02);
+  color: #0a66c2;
+  box-shadow: 0 4px 8px rgba(10, 102, 194, 0.1);
+}
+
+.sideBArOptions > svg {
+  height: 1.3rem;
+  width: 1.3rem;
+  min-width: 1.3rem;
+}
+
+/* Extra Cards (Right Bar) */
+.profileCard {
+  padding: 0.8rem;
+  background: #f9f9f9;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+}
+
+.profileCard:hover {
+  background: #eaf3fc;
+  box-shadow: 0 4px 8px rgba(10, 102, 194, 0.1);
+  transform: translateY(-2px);
+}
+
+.profileDetails h4 {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.homeContainer_extraContainer h3 {
+  margin-bottom: 1rem;
+  color: #0a66c2;
+}
+
+
+
+/* ✅ Responsive Only For Small Screens */
+@media (max-width: 991px) {
+  .homeContainer {
+    flex-direction: column;
+  }
+
+  .homeContainer_leftBar,
+  .homeContainer_feedContainer,
+  .homeContainer_extraContainer {
+    flex: none;
+    width: 100%;
+    border: none;
+    padding: 1rem;
+  }
+
+  .homeContainer_leftBar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 0.8rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .sideBArOptions {
+    font-size: 0.95rem;
+    padding: 0.6rem 0.8rem;
+    justify-content: center;
+    width: auto;
+  }
+
+  .homeContainer_extraContainer h3 {
+    text-align: center;
+  }
+
+  .profileCard {
+    padding: 0.6rem;
+  }
+
+  .profileDetails h4 {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .sideBArOptions {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.6rem;
+    gap: 0.4rem;
+  }
+
+  .profileDetails h4 {
+    font-size: 0.85rem;
+  }
+
+  .homeContainer_feedContainer {
+    padding: 1rem 0.5rem;
+  }
+}

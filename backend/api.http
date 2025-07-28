@@ -1,0 +1,35 @@
+POST http://localhost:9090/register HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "anuragchaurasiya",
+  "password": "1234567890",
+  "email": "anurag123@gmail.com",
+  "name": "Anurag Chaurasiya"
+}
+
+
+
+
+
+###
+
+POST http://localhost:9090/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "email":"anurag123@gmail.com",
+  "password": "1234567890"
+}
+
+
+
+###
+
+POST http://localhost:9090/get_user_and_profile HTTP/1.1
+Content-Type:  application/json
+
+{
+  
+  "token": "6262c226a563c3c6d9c97a9108f40f4c99c58adfb06d286017f429b910ccc0c7"
+}

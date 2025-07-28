@@ -1,0 +1,131 @@
+.container {
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+  flex-wrap: wrap; /* allow wrapping for small screens */
+}
+
+.navbar h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0073b1;
+  transition: all 0.3s ease;
+}
+
+.navbar h1:hover {
+  color: #005582;
+  transform: scale(1.05);
+}
+
+.navbarOptionContainer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1rem;
+}
+
+.navbarOptionContainer p {
+  margin: 0;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navbarOptionContainer p:hover {
+  color: #0073b1;
+}
+
+.navbarOptionContainer p::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: #0073b1;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+.navbarOptionContainer p:hover::after {
+  width: 100%;
+}
+
+.buttonJoin {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: #0073b1;
+  color: white;
+  padding: 0.6rem 1.4rem;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 115, 177, 0.2);
+}
+
+.buttonJoin:hover {
+  background-color: #005582;
+  transform: scale(1.05);
+}
+
+/* ✅ Responsive Styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    gap: 1rem;
+    padding: 0.5rem 0;
+  }
+
+  .navbar h1 {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  .navbarOptionContainer {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .navbarOptionContainer p {
+    font-size: 0.95rem;
+  }
+
+  .buttonJoin {
+    font-size: 1rem;
+    padding: 0.5rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar h1 {
+    font-size: 1.3rem;
+  }
+
+  .navbarOptionContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .buttonJoin {
+    width: 100%;
+    text-align: center;
+    padding: 0.6rem 1rem;
+  }
+}
