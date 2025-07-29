@@ -1,0 +1,89 @@
+.userCard {
+    display: flex;
+    width: 100%;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  
+  .userCard:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    background-color: #f9f9f9;
+  }
+  
+  .profilePicture > img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #e1e1e1;
+  }
+  
+  .userCardInfo {
+    flex-grow: 1;
+  }
+  
+  .userCardInfo h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+    color: #222;
+  }
+  
+  .userCardInfo p {
+    margin: 0.2rem 0 0;
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  .connectedButton {
+    padding: 0.5rem 1.2rem;
+    background-color: #0073b1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .connectedButton:hover {
+    background-color: #005e93;
+    transform: scale(1.05);
+  }
+  
+  /* Section title styling */
+  .sectionTitle {
+    font-size: 1.3rem;
+    margin: 1rem 0 0.5rem;
+    color: #2c2c2c;
+    font-weight: 600;
+  }
+  
+  
+  /* Responsive tweaks */
+  @media (max-width: 600px) {
+    .userCard {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem;
+    }
+  
+    .profilePicture > img {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .connectedButton {
+      width: 100%;
+      margin-top: 0.8rem;
+    }
+  }
+  
