@@ -1,0 +1,95 @@
+.userProfile {
+  max-width: 800px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+}
+
+.userCard {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background-color: #ffffff;
+  border-radius: 0.8rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  border: 1px solid #e6e6e6;
+  margin-bottom: 2rem;
+}
+
+.userCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(10, 102, 194, 0.2);
+  border-color: #0a66c2;
+}
+
+.userCard_img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #0a66c2;
+  transition: border-color 0.3s ease;
+}
+
+.userCard:hover .userCard_img {
+  border-color: #004182;
+}
+
+.userCard h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0a66c2;
+  margin: 0 0 0.2rem;
+  transition: color 0.3s ease;
+}
+
+.userCard p {
+  font-size: 0.9rem;
+  color: #5f5f5f;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .userCard {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .userCard_img {
+    width: 50px;
+    height: 50px;
+  }
+}
+.discoverHeading {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #0a66c2;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.discoverHeading::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #0a66c2;
+  border-radius: 2px;
+}
