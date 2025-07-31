@@ -14,11 +14,11 @@ app.use(express.json());
 app.use(postRoutes);
 app.use(userRoutes);
 
-// Serve static files from /uploads
-const __dirname = path.resolve();
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+// // Serve static files from /uploads
+// const __dirname = path.resolve();
+// app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// app.use(express.static('uploads'));
+app.use(express.static('uploads'));
 
 const start = async () => {
   const connectDB = await mongoose.connect("mongodb+srv://anurag9120959628:hGUiZQHsVTA9o0gj@linkdinclone.igp4tq3.mongodb.net/?retryWrites=true&w=majority&appName=linkdinclone");
