@@ -1,11 +1,11 @@
 import axios from "axios";
 
-// Create axios client using env variable
+// Axios client setup
 export const clientServer = axios.create({
-    baseURL: import.meta.env.VITE_API_BASE_URL,
+  baseURL: process.env.NEXT_PUBLIC_CLIENT_SERVER_URL,
 });
 
-// Image URL base
-export const BASE_URL = import.meta.env.VITE_IMAGE_BASE_URL;
-// Default headers for the axios client
-clientServer.defaults.headers.common["Content-Type"] = "application/json";
+// Image and API base URLs
+export const BASE_URL = process.env.NEXT_PUBLIC_IMAGE_BASE_URL;
+export const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+export const IMAGE_URL = process.env.NEXT_PUBLIC_IMAGE_URL;

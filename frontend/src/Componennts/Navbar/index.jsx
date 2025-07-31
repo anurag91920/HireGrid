@@ -20,7 +20,7 @@ useEffect(() => {
   const token = localStorage.getItem("token");
 
   if (token && !authState.profileFetched) {
-    dispatch(getAboutUser());  // 👈👈👈 bas yeh call kar dena
+    dispatch(getAboutUser());  // bas yeh call kar dena
   }
 }, []);
 
