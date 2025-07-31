@@ -46,7 +46,7 @@ export const registerUser = createAsyncThunk("user/register", async (user, thunk
         const data = response.data;
 
         // Message ko handle karo, token ko nahi expect karo
-        return thunkAPI.fulfillWithValue(data); // 👈 send full response
+        return thunkAPI.fulfillWithValue(data); //  send full response
 
     } catch (error) {
         return thunkAPI.rejectWithValue(error.response.data);
@@ -112,7 +112,7 @@ export const sendConnectionRequest = createAsyncThunk("user/sendConnectionReques
 export const getConnectionRequest = createAsyncThunk("user/getConnectionRequests",
     async (user, thunkAPI) => {
         try {
-            console.log("getConnectionRequest called"); // 👈 Add this
+            console.log("getConnectionRequest called"); //  Add this
             const response = await clientServer.get("/user/getConnectionRequest", {
                 params:{
                     token: user.token
