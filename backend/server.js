@@ -18,13 +18,8 @@ const __dirname = path.dirname(__filename);
 
 // CORS Configuration
 const allowedOrigins = [
-<<<<<<< HEAD
   process.env.CORS_ORIGIN || 'https://hire-grid-frontend.vercel.app', // Default to localhost if not set
   'https://hire-grid-frontend.vercel.app' // Add your production domain here
-=======
-  process.env.CORS_ORIGIN || 'https://hire-grid-frontend.vercel.app/', // Default to localhost if not set
-  'https://hire-grid-frontend.vercel.app/' // Add your production domain here
->>>>>>> 94ba2990ccafeffbb5b8df5f8aedb7e77c73c555
 ];
 
 app.use(cors({
