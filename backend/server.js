@@ -2,6 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
 import postRoutes from './routes/post.routes.js';
 import userRoutes from './routes/user.routes.js';
 
@@ -9,25 +12,60 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+// Fix for __dirname in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// CORS Configuration
+const allowedOrigins = [
+  process.env.CORS_ORIGIN || 'http://localhost:3000', // Default to localhost if not set
+  'https://your-production-domain.com' // Add your production domain here
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      console.log('Blocked CORS origin:', origin);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
+
+// Parse JSON and URL-encoded data
 app.use(express.json());
-app.use(postRoutes);
-app.use(userRoutes);
+app.use(express.urlencoded({ extended: true }));
 
-// // Serve static files from /uploads
-// const __dirname = path.resolve();
-// app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+// Health check or home route
+app.get('/', (req, res) => {
+  res.send('Server is running');
+});
 
-app.use(express.static('uploads'));
+// Routes
+app.use('/api/posts', postRoutes);
+app.use('/api/users', userRoutes);
 
-const start = async () => {
-  const connectDB = await mongoose.connect("mongodb+srv://anurag9120959628:hGUiZQHsVTA9o0gj@linkdinclone.igp4tq3.mongodb.net/?retryWrites=true&w=majority&appName=linkdinclone");
-  console.log("✅ Connected to MongoDB");
+// Serve static files from /uploads
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-  app.listen(9090, () => {
-    console.log("🚀 Server is running on port 9090");
-  });
-};
+// Global error handler (optional but recommended)
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: err.message || 'Internal Server Error' });
+});
 
-start();
+// MongoDB connection
+mongoose.connect(process.env.MONGO_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log('MongoDB Connected'))
+.catch(err => console.error('MongoDB Connection Error:', err));
 
+// Start the server
+const PORT = process.env.PORT || 9090;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
