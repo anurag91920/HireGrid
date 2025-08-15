@@ -40,5 +40,38 @@
 
 ---
 
-## 📁 Project Structure
+## 📷 Screenshots
+
+You can add UI screenshots here: Login Page, Profile Page, Resume Download, etc.
+
+🛡️ Security Features
+
+Password hashing using bcrypt
+
+Cross-origin request support via CORS
+
+.env for secure environment configs
+
+JWT-based or session auth can be added as future enhancement
+
+🔮 Future Enhancements
+
+Add real-time chat or messaging feature
+
+Add endorsements and recommendations
+
+Profile privacy controls
+
+AI-powered resume builder
+
+📌 License
+
+This project is licensed under the MIT License.
+
+🙋‍♂️ Author
+
+Anurag
+📧 Email: anurag9120959628@gmail.com
+💼 Portfolio: https://port-folio-one-red.vercel.app
+🔗 Live Project: https://hire-grid-frontend.vercel.app
 
