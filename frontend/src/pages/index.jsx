@@ -1,43 +1,45 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import styles from "../styles/Home.module.css";
 import { useRouter } from "next/router";
+import styles from "../styles/Home.module.css";
 import UserLayout from "@/layout/userLayout";
 
-
-const inter = Inter({ subsets: ["latin"] });
-
-
-
-
 export default function Home() {
-
-   const router = useRouter();
+  const router = useRouter();
 
   return (
     <UserLayout>
-      <>
-      <div className= {styles.container}>
+      <Head>
+        <title>proConnect - Connect Without Bugs</title>
+        <meta
+          name="description"
+          content="A True Social Media Experience — With Stories, Without Bugs!"
+        />
+      </Head>
+
+      <div className={styles.container}>
         <div className={styles.mainContainer}>
           <div className={styles.mainContainer_left}>
-            <p>Connect with Friends without Exaggeration</p>
+            <h1>Connect with Friends without Exaggeration</h1>
             <p>A True Social Media Experience — With Stories, Without Bugs!</p>
-            <div className={styles.buttonJoin}>
-              <p onClick={() =>{
-              router.push("/login")
-              }}  >Join  Now</p>
-            </div>
+
+            <button
+              className={styles.buttonJoin}
+              onClick={() => router.push("/login")}
+            >
+              Join Now
+            </button>
           </div>
 
           <div className={styles.mainContainer_right}>
-            <img src="images/Proconnect.jpg" alt="" width={500} height={500} />
+            <img
+              src="/images/Proconnect.jpg"
+              alt="ProConnect Banner"
+              width={500}
+              height={500}
+            />
           </div>
-
         </div>
-
       </div>
-     </>
     </UserLayout>
-);
-} 
+  );
+}
